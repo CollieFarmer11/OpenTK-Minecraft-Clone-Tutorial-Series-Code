@@ -12,7 +12,7 @@ using OpenTK.Graphics.OpenGL4;
 
 namespace Minecraft_Clone_Tutorial_Series_videoproj
 {
-    // Game class that inherets from the Game Window Class
+    // Game class that inherits from the Game Window Class
     internal class Game : GameWindow
     {
         // set of vertices to draw the triangle with (x,y,z) for each vertex
@@ -53,7 +53,7 @@ namespace Minecraft_Clone_Tutorial_Series_videoproj
         {
             base.OnLoad();
 
-            // generate the vbo
+            // generate the vao
             vao = GL.GenVertexArray();
 
             // generate a buffer
@@ -84,7 +84,7 @@ namespace Minecraft_Clone_Tutorial_Series_videoproj
             // Compile the Shader
             GL.CompileShader(vertexShader);
 
-            // Same as vertex shader
+            // Do the same in the fragment shader
             int fragmentShader = GL.CreateShader(ShaderType.FragmentShader);
             GL.ShaderSource(fragmentShader, LoadShaderSource("Default.frag"));
             GL.CompileShader(fragmentShader);
